@@ -1,0 +1,24 @@
+.container{
+    height: 1.2rem;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #e0e0de;
+    border-radius: 50px;
+
+
+    
+}
+
+
+.progress{
+    height: 100%;
+    background-color:blueviolet;
+    border-radius: inherit;
+    text-align: right;
+    transition: width 1s ease-in-out;
+
+}
+
+
+
