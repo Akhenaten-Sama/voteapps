@@ -2,6 +2,8 @@
     display: grid;
     width:23vw;
     height:50vh;
+    margin-right: 1rem;
+    margin-left:1rem;
     margin-bottom: 5%;
     justify-items: center;
     border:0.5px solid rgba(105,98,105,0.2);
@@ -78,6 +80,15 @@
     
     .card-name{
         font-size: 1.2rem;
+    }
+
+    .num{
+        font-size: 1.2rem;
+    }
+
+    .num >span > button{
+        font-size: 1.3rem;
+        padding: 0 0.5rem;
     }
 
 }
