@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    @media screen  and (max-width:760px){
+    @media screen  and (max-width:560px){
         display:grid;
         justify-items: center;
         align-self: center;
@@ -18,8 +18,8 @@
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: whitesmoke;
-    margin: 0 2rem;
-    padding: 3rem;
+    margin: 1rem;
+    padding: 2rem;
     box-shadow: 8px 9px 14px -7px rgba(105,98,105,0.84);
     -moz-box-shadow: 8px 9px 14px -7px rgba(105,98,105,0.84);
     
