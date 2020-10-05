@@ -1,28 +1,20 @@
-import React from 'react';
+import React, {useContext, useEffect, useRef} from 'react';
 import CardPanel from '../cardPanel/cardPanel'
 import Progressbar from '../ProgressBar/progressbar'
+import DataContext from '../state'
 import './cards.scss'
 
-class Main extends React.Component{
-    state ={
-        list:[
-            {name:'Laolu', imgUrl:'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', num:0, color:'green'},
-            {name:'Izu', imgUrl:'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', num:0, color:'red'},
-            {name:'SegunFlames', imgUrl:'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', num:0, color:'blue'}, 
-            {name:'Dayo', imgUrl:'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', num:0, color: 'pink'},
-            {name:'Shomz', imgUrl:'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', num:0, color:'gray'},
-            {name:'Wiz', imgUrl:'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', num:0, color:'orange'},
-            {name:'Mac', imgUrl:'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80', num:0, color:'yellow'},
-            
-            
-            
-        ],
-        total:15
-    } 
+const Main= ()=> {
+    
+const {state, setState} = useContext(DataContext)
 
 
-handleIncrease = (i)=> {
-  this.setState(state=>{
+   
+
+   // console.log(localStorage.getItem('state'))
+
+const handleIncrease = (i)=> {
+  setState(state=>{
       const list = state.list.map((item, j)=> {
           if(j===i){
             console.log(item.num)
@@ -43,8 +35,8 @@ handleIncrease = (i)=> {
 })
 }
 
-handleDecrease = (i)=> {
-    this.setState(state=>{
+const handleDecrease = (i)=> {
+ setState(state=>{
         const list = state.list.map((item, j)=> {
             if(j===i){
               
@@ -69,19 +61,18 @@ handleDecrease = (i)=> {
   })
   }
 
-render(){
 
-    console.log(this.state.total)
+    console.log(state.total)
     return ( <div className='wrapper'>
 
         <div className='total'>
         <h2 className='heading'>Total Votes Left </h2>
-        <h4 className='number'>{this.state.total}</h4>
-        <Progressbar total = {this.state.total}/>
+        <h4 className='number'>{state.total}</h4>
+        <Progressbar total = {state.total}/>
         </div>
         <div className='cards'>
         { 
-            this.state.list.map(
+            state.list.map(
                 (obj, idx)=> <CardPanel 
                  key={idx} 
                  name={obj.name} 
@@ -89,18 +80,25 @@ render(){
                  num={obj.num}
                  idx={idx}
                  color={obj.color}
-                 total={this.state.total}
-                 handleIncrease={this.handleIncrease}
-                 handleReduce ={this.handleDecrease}
+                 total={state.total}
+                 handleIncrease={handleIncrease}
+                 handleReduce ={handleDecrease}
                  /> )
                 
                  
                 }
+                
         </div>
-        
+         <a  onClick={(e)=>{
+           if(state.total!==0){
+            e.preventDefault()
+            alert('Please Finish Voting!')
+           }
+           
+         }} className='leaderboard'href='/winner'> Check LeaderBoard </a>
         </div> )
 }
 
-}
+
 
 export default Main
