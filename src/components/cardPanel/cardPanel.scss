@@ -1,7 +1,9 @@
 .cardpanel{
     display: grid;
-    width:23vw;
-    height:50vh;
+    grid-template-columns: 1fr;
+    width:28%;
+    height:45;
+    padding-bottom:2rem ;
     margin-right: 1rem;
     margin-left:1rem;
     margin-bottom: 5%;
@@ -85,6 +87,7 @@
 
     .num{
         font-size: 1.2rem;
+        padding: 1rem;
     }
 
     .num >span > button{

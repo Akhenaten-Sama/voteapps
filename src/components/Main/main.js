@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef} from 'react';
+import React, {useContext} from 'react';
 import CardPanel from '../cardPanel/cardPanel'
 import Progressbar from '../ProgressBar/progressbar'
 import DataContext from '../state'

@@ -50,7 +50,7 @@
         font-size: 3rem;
         line-height: 1rem;
         font-weight: 900;
-        color:grey;
+        color:whitesmoke;
     }
 }
 .leaderboard  {
@@ -66,6 +66,7 @@
     margin:auto;
     font-size: 1rem;
     line-height: 1.3rem;
+    margin-bottom: 1rem;
     
     ;
     &:hover{
@@ -78,6 +79,13 @@
 
     .winner-header{
         text-align: center;
-        color: white;
+        background-color:rgba(22, 182, 194, 0.918);
+        box-shadow: 8px 9px 14px -7px rgba(105,98,105,0.84);
+    -moz-box-shadow: 8px 9px 14px -7px rgba(105,98,105,0.84);
+    border-radius: 8px;
+    padding:0.8rem;
+    color:white;
+    
+    
 
     }

@@ -17,9 +17,10 @@ const Winner = ()=> {
         <h1 className='winner-header'>Congratulations!!!!!</h1>
         { state.list.map(obj=> {
             if(obj.num===highest){
-                return <Card num={obj.num} img={obj.imgUrl} name={obj.name} />
+                return <Card num={obj.num} img={obj.imgUrl} name={obj.name} color={obj.color}/>
             }
-            
+               
+            return null
 
             })}
 
