@@ -88,6 +88,7 @@ const handleDecrease = (i)=> {
          <a  onClick={(e)=>{
            if(state.total!==0){
             e.preventDefault()
+            alert('Please Finish Voting')
     
            } 
            
